@@ -37,6 +37,9 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposed_version")
     // h2 SQL
     implementation("com.h2database:h2:$h2_version")
+    // bcrypt
+    implementation("at.favre.lib:bcrypt:0.9.0")
+
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 
