@@ -1,7 +1,9 @@
 package com.elnemr.services.users.domain
 
 import at.favre.lib.crypto.bcrypt.BCrypt
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class User(
     val userId: String,
     val email: String,

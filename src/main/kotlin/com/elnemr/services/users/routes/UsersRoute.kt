@@ -40,7 +40,7 @@ fun Route.usersRoute() {
                 status = HttpStatusCode.BadRequest
             )
 
-            call.respondText("User successfully created", status = HttpStatusCode.InternalServerError)
+            call.respond(message = "User successfully created", status = HttpStatusCode.Created)
 
         }
 
