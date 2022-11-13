@@ -1,5 +1,6 @@
 package com.elnemr.database
 
+import com.elnemr.services.tasks.data.Tasks
 import com.elnemr.services.users.data.Users
 import kotlinx.coroutines.Dispatchers
 import org.jetbrains.exposed.sql.Database
@@ -14,7 +15,7 @@ object DatabaseFactory {
         val database = Database.connect(jdbcURL, driverClassName)
         transaction(database) {
             SchemaUtils.create(Users)
-//            SchemaUtils.create(Tasks)
+            SchemaUtils.create(Tasks)
         }
     }
 
