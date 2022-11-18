@@ -29,6 +29,14 @@ class UsersDAOImpl : UsersDAO {
             }.map(::resultRowToUser).singleOrNull()
         }
     }
+
+    override suspend fun getUserById(userId: String): User? {
+        return dbQuery {
+            Users.select {
+                Users.userId eq userId
+            }.map(::resultRowToUser).singleOrNull()
+        }
+    }
 }
 
 val userDAO: UsersDAO = UsersDAOImpl()

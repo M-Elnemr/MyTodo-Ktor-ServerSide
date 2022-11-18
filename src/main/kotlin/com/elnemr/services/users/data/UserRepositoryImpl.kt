@@ -18,6 +18,9 @@ class UserRepositoryImpl : UserRepository {
     override suspend fun isEmailExists(email: String): Boolean =
         userDAO.getUserByEmail(email) != null
 
+    override suspend fun isUserIdExists(userID: String): Boolean =
+        userDAO.getUserById(userID) != null
+
     override suspend fun isUserPasswordValid(password: String, hashedPassword: String): Boolean =
         toVerifyHashedPassword(password, hashedPassword)
 
