@@ -25,7 +25,7 @@ class TasksDAOImpl : TasksDAO {
 
     override suspend fun deleteTask(taskId: String): Boolean {
         return dbQuery {
-            Tasks.deleteIgnoreWhere {
+            Tasks.deleteWhere {
                 Tasks.taskId eq taskId
             }
         } > 0

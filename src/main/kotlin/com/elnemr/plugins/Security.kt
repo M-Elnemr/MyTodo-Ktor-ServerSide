@@ -20,28 +20,5 @@ fun Application.configureSecurity() {
     				}
     			}
     		}
-    
-    	    form(name = "myauth2") {
-    	        userParamName = "user"
-    	        passwordParamName = "password"
-    	        challenge {
-    	        	/**/
-    			}
-    	    }
     	}
-
-    routing {
-        authenticate("myauth1") {
-            get("/protected/route/basic") {
-                val principal = call.principal<UserIdPrincipal>()!!
-                call.respondText("Hello ${principal.name}")
-            }
-        }
-        authenticate("myauth2") {
-            get("/protected/route/form") {
-                val principal = call.principal<UserIdPrincipal>()!!
-                call.respondText("Hello ${principal.name}")
-            }
-        }
-    }
 }
